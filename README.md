@@ -1,6 +1,6 @@
 # web app from scratch
 
-## Opdracht2: Voor- en nadelen JavaScript libraries/frameworks ##
+## Opdracht 2: Voor- en nadelen JavaScript libraries/frameworks ##
 
 ### Voordelen: ###
 
