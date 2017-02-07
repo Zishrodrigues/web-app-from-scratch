@@ -4,6 +4,7 @@ var geoModule = {
         this._listeners[a],d=0,e=b.length;d<e;d++)if(b[d]===c){b.splice(d,1);break}}}; var ET = new EventTarget();    
     },    
     init: function () {
+    	"use strict";
         var GPS_AVAILABLE = 'GPS_AVAILABLE';
         var GPS_UNAVAILABLE = 'GPS_UNAVAILABLE'; 
                
