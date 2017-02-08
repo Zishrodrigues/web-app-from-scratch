@@ -1,5 +1,40 @@
 (function() {
     "use strict";
+
+    var app = {
+        init: function() {
+            routes.init();
+        }
+    };
+
+    var routes = {
+        init: function() {
+            //console.log('test');
+        }
+    }; 
+
+    var sections = {
+    };       
+
+    app.init();
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// EXAMPLE
+
+(function() {
+    "use strict";
     var person = {
         name: 'jane doe',
         speak: function() {
