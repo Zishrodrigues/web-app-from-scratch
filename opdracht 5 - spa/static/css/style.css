@@ -8,14 +8,12 @@ body {
 	font-family: sans-serif;
 	background-color: #111111;
 	color: #ffffff;
+	padding: 2em;
 }
 
 a {
 	text-decoration: none;
 	color: #ffffff;
-}
-
-nav {
 }
 
 nav ul {
@@ -41,7 +39,7 @@ section {
 }
 
 ol {
-	
+
 }
 
 ol li {
