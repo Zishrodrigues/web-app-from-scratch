@@ -31,3 +31,7 @@ section {
 	height: 90vh;
 	border: 0.2em purple dashed;
 }
+
+.hidden {
+	display: none;
+}
