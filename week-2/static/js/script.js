@@ -33,5 +33,46 @@
       }
   };
 
+  //set variables in library object
+  var library = {
+    main: document.querySelector('main'),
+    template : Handlebars.compile(document.querySelector('#template').innerHTML),
+    urlHolidays: 'https://holidayapi.com/v1/holidays?key=e969cdc0-1552-4027-b885-41220d5b85f3&country=NL&year=2016',
+    html: ''
+  };
+
+  var dataContainer = {
+    valueA: '',
+    valueB: ''
+  };
+
+  // store the data here
+  var storeData = {
+    holidays: function(data) {
+      var holidaysArray = Object.keys(data.holidays)
+        .map(hMap => data.holidays[hMap])
+        .map(hMap => hMap[0])
+        .map(whatever => whatever.name);
+      console.log(holidaysArray);
+      // dataContainer.valueA = data.holidays;
+      // dataContainer.valueB = data.holidays;
+    }
+  };
+
+  // object that calls the data
+  var getData = {
+    init: function() {
+      aja()
+        .url(library.urlHolidays)
+        .on('200', function(data){
+            //data is a javascript object
+            storeData.holidays(data);
+          })
+      .go();
+    }
+  };
+
+  // console.log(dataContainer);
+  getData.init();
   app.init(); //the main app function is called
 })();
