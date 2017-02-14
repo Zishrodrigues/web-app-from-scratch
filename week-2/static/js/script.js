@@ -33,5 +33,31 @@
       }
   };
 
+  var api = {
+    init: function() {
+      var request = new XMLHttpRequest();
+      request.open('GET', 'https://holidayapi.com/v1/holidays?key=e969cdc0-1552-4027-b885-41220d5b85f3&country=NL&year=2016', true);
+
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          // Success!
+          console.log('success');
+          var data = JSON.parse(request.responseText);
+        } else {
+          console.log('error');
+          // We reached our target server, but it returned an error
+        }
+      };
+
+      request.onerror = function() {
+        // There was a connection error of some sort
+      };
+
+      request.send();
+      console.log(request);
+    }
+  };
+
   app.init(); //the main app function is called
+  api.init();
 })();
