@@ -52,7 +52,7 @@
       var holidaysArray = Object.keys(data.holidays)
         .map(hMap => data.holidays[hMap])
         .map(hMap => hMap[0])
-        .map(whatever => whatever.name);
+        .map(mapName => mapName.name);
       console.log(holidaysArray);
       // dataContainer.valueA = data.holidays;
       // dataContainer.valueB = data.holidays;
