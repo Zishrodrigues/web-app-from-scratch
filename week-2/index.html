@@ -10,16 +10,6 @@
 
 </head>
 <body>
-	<nav>
-		<ul>
-			<li>
-				<a href="#home" cla>Start</a>
-			</li>
-			<li>
-				<a href="#bestprac">Best practises</a>
-			</li>
-		</ul>
-	</nav>
 
   <main>
     <h2>Cards</h2>
@@ -29,13 +19,13 @@
 
   <script id="template" type="text/x-handlebars-template">
     <div class="entry">
-      <h1>
+      <a href="#{{name}}">
         {{name}}
-      </h1>
-      <h2>
-        {{type}}
-      </h2>
+      </a>
       <img src="{{img}}" alt="{{name}}">
+      <section id="{{name}}" class="hidden">
+        {{type}}
+      </section>
     </div>
   </script>
 

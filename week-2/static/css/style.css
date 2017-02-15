@@ -16,34 +16,16 @@ a {
 	color: #ffffff;
 }
 
-nav ul {
-	list-style-type: none;
-	text-align: center;
-}
-
-nav ul li {
-	display: inline-block;
-}
-
-nav ul li a {
-	display: inline-block;
-	padding:0.3em 1em 0 1em;
-	font-size: 1em;
-}
-
 section {
 	height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	border: 0.1em green dashed;
 }
 
-ol {
-
-}
-
-ol li {
-	font-size: 1.2em;
+.entry {
+	border: 0.1em red dashed;
 }
 
 .hidden {

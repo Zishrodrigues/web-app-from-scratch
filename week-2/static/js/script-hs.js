@@ -64,7 +64,6 @@
         .on('200', function(data){
             //data is a javascript object
             renderData.render(data);
-            console.log(data);
           })
       .go();
     }
