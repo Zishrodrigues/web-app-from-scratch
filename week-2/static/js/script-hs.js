@@ -39,9 +39,6 @@
     main : document.querySelector('main'),
     template : document.querySelector('#template'),
     source : template.innerHTML,
-    compile : function() {
-      Handlebars.compile(this.source);
-    },
     urlPromoCards: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Promo',
     html: ''
   };
@@ -50,8 +47,10 @@
   var renderData = {
     render: function(data) {
       data.forEach(function(item, i) {
-        library.html = library.compile(item);
+        var compile = Handlebars.compile(library.source);
+        library.html = compile(item);
         library.main.innerHTML += library.html;
+        console.log(item);
       });
     }
   };

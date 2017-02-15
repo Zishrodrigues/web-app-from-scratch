@@ -22,20 +22,25 @@
 	</nav>
 
   <main>
-    <h1>Cards</h1>
+    <h2>Cards</h2>
 
     <!-- HTML will be injected here -->
   </main>
 
   <script id="template" type="text/x-handlebars-template">
-    <article class="entry">
-      <h1>{{name}}</h1>
-    </article>
+    <div class="entry">
+      <h1>
+        {{name}}
+      </h1>
+      <h2>
+        {{type}}
+      </h2>
+      <img src="{{img}}" alt="{{name}}">
+    </div>
   </script>
 
   <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
   <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
-	<script type="text/javascript" src="static/js/script.js"></script>
   <script type="text/javascript" src="static/js/script-hs.js"></script>
 </body>
 </html>
