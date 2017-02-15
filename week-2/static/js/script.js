@@ -6,6 +6,7 @@
   var app = { // the app object is declared
     init: function() { // the init function is declared and run
         routes.init(); //the routes function is called
+        getData.init();
     }
   };
 
@@ -49,12 +50,18 @@
   // store the data here
   var storeData = {
     holidays: function(data) {
-      var holidaysArray = Object.keys(data.holidays)
-        .map(hMap => data.holidays[hMap])
-        .map(hMap => hMap[0])
-        .map(mapName => mapName.name);
+      var holidaysArray = Object.keys(data.holidays).map(function (hMap) {
+      return data.holidays[hMap];
+    }).map(function (hMap) {
+      return hMap[0];
+    }).map(function (mapName) {
+      return mapName.name;
+    });
+        // .map(hMap => data.holidays[hMap]);
+        // .map(hMap => hMap[0])
+        // .map(mapName => mapName.name);
       console.log(holidaysArray);
-      // dataContainer.valueA = data.holidays;
+      dataContainer.valueA = holidaysArray;
       // dataContainer.valueB = data.holidays;
     }
   };
@@ -72,7 +79,5 @@
     }
   };
 
-  // console.log(dataContainer);
-  getData.init();
   app.init(); //the main app function is called
 })();
