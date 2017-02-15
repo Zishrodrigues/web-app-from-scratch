@@ -36,33 +36,23 @@
 
   //set variables in library object
   var library = {
-    main: document.querySelector('main'),
-    template : Handlebars.compile(document.querySelector('#template').innerHTML),
-    urlHolidays: 'https://holidayapi.com/v1/holidays?key=e969cdc0-1552-4027-b885-41220d5b85f3&country=NL&year=2016',
+    main : document.querySelector('main'),
+    template : document.querySelector('#template'),
+    source : template.innerHTML,
+    compile : function() {
+      Handlebars.compile(this.source);
+    },
+    urlPromoCards: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Promo',
     html: ''
   };
 
-  var dataContainer = {
-    valueA: '',
-    valueB: ''
-  };
-
   // store the data here
-  var storeData = {
-    holidays: function(data) {
-      var holidaysArray = Object.keys(data.holidays).map(function (hMap) {
-        return data.holidays[hMap];
-      }).map(function (hMap) {
-        return hMap[0];
-      }).map(function (mapName) {
-        return mapName.name;
-    });
-        // .map(hMap => data.holidays[hMap]);
-        // .map(hMap => hMap[0])
-        // .map(mapName => mapName.name);
-      console.log(holidaysArray);
-      dataContainer.valueA = holidaysArray;
-      // dataContainer.valueB = data.holidays;
+  var renderData = {
+    render: function(data) {
+      data.forEach(function(item, i) {
+        library.html = library.compile(item);
+        library.main.innerHTML += library.html;
+      });
     }
   };
 
@@ -70,10 +60,12 @@
   var getData = {
     init: function() {
       aja()
-        .url(library.urlHolidays)
+        .url(library.urlPromoCards)
+        .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
         .on('200', function(data){
             //data is a javascript object
-            storeData.holidays(data);
+            renderData.render(data);
+            console.log(data);
           })
       .go();
     }
