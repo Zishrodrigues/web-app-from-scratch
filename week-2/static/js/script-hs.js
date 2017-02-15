@@ -18,6 +18,13 @@
           'list/:cardId': function(cardId) {
             console.log(cardId);
             // toggleSections.toggle();
+            if ('#list/' + cardId  === window.location.hash) {
+                document.getElementById(cardId).classList.remove('hidden');
+                console.log('if ' + cardId);
+            } else {
+                document.getElementById(cardId).classList.add('hidden');
+                console.log('else ' + cardId);
+            }
           }
       });
       // routie('renderData.render.item.cardId', function() {
@@ -40,10 +47,12 @@
       toggle: function(data){
           var route = window.location.hash;
           data.forEach(function (cardId){
-            if ('#/list/' + cardId  === route ) {
+            if ('#list/' + cardId  === window.location.hash) {
                 document.getElementById(cardId).classList.remove('hidden');
+                console.log('if ' + cardId);
             } else {
                 document.getElementById(cardId).classList.add('hidden');
+                console.log('else ' + cardId);
             }
           });
       }
