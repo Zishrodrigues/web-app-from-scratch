@@ -1,6 +1,7 @@
 (function() { // here an iffe is initiated as to keep the global scope empty and run the code on read
-  "use strict"; // the strict line is used to make sure the function only runs in strict mode
-
+  //why are you using strict!?
+  //"use strict"; // the strict line is used to make sure the function only runs in strict mode
+  
   window.location.hash = '#home'; //go to #home as soon as the page loads
 
   var app = { // the app object is declared
