@@ -1,7 +1,7 @@
 (function() { // here an iffe is initiated as to keep the global scope empty and run the code on read
   "use strict"; // the strict line is used to make sure the function only runs in strict mode
 
-  window.location.hash = '#home'; //go to #home as soon as the page loads
+  window.location.hash = '#list'; //go to #home as soon as the page loads
 
   var app = { // the app object is declared
     init: function() { // the init function is declared and run
@@ -11,27 +11,19 @@
   };
 
   var routes = { // the route object is declared
-    pages: [ //here an array is made with the page id's
-      'home',
-      'bestprac'
-    ],
     init: function() { // the routes.init function is declared
-      window.addEventListener('hashchange', sections.toggle, false);
+      routie({
+          'list': function() {
+          },
+          'list/:cardId': function(cardId) {
+            console.log(cardId);
+            // toggleSections.toggle();
+          }
+      });
+      // routie('renderData.render.item.cardId', function() {
+      //   console.log('zomg');
+      // });
     }
-  };
-
-  var sections = {
-      // loop for each get element by id
-      toggle: function(){
-          var route = window.location.hash;
-          routes.pages.forEach(function (page){
-            if ('#' + page  === route ) {
-                document.getElementById(page).classList.remove('hidden');
-            } else {
-                document.getElementById(page).classList.add('hidden');
-            }
-          });
-      }
   };
 
   //set variables in library object
@@ -43,6 +35,20 @@
     html: ''
   };
 
+  var toggleSections = {
+      // loop for each get element by id
+      toggle: function(data){
+          var route = window.location.hash;
+          data.forEach(function (cardId){
+            if ('#/list/' + cardId  === route ) {
+                document.getElementById(cardId).classList.remove('hidden');
+            } else {
+                document.getElementById(cardId).classList.add('hidden');
+            }
+          });
+      }
+  };
+
   // store the data here
   var renderData = {
     render: function(data) {
@@ -50,7 +56,6 @@
         var compile = Handlebars.compile(library.source);
         library.html = compile(item);
         library.main.innerHTML += library.html;
-        console.log(item);
       });
     }
   };

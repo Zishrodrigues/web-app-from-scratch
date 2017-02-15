@@ -19,16 +19,20 @@
 
   <script id="template" type="text/x-handlebars-template">
     <div class="entry">
-      <a href="#{{name}}">
-        {{name}}
-      </a>
-      <img src="{{img}}" alt="{{name}}">
-      <section id="{{name}}" class="hidden">
+      <section id="list" class="home">
+        <a href="#list/{{cardId}}">
+          {{name}}
+        </a>
+        <img src="{{img}}" alt="{{name}}">
+      </section>
+      <section id="{{cardId}}" class="hidden">
         {{type}}
+        {{text}}
       </section>
     </div>
   </script>
 
+  <script type="text/javascript" src="static/js/routie.js"></script>
   <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
   <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
   <script type="text/javascript" src="static/js/script-hs.js"></script>

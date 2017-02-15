@@ -23,6 +23,9 @@ section {
 	align-items: center;
 	border: 0.1em green dashed;
 }
+.home {
+	height: auto;
+}
 
 .entry {
 	border: 0.1em red dashed;
