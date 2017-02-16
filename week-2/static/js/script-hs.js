@@ -17,6 +17,9 @@
             document.querySelectorAll('.home').forEach(function (homeClass) {
               homeClass.classList.remove('hidden');
             });
+            document.querySelectorAll('.card-detail').forEach(function (cardDetail) {
+              cardDetail.classList.add('hidden');
+            });
           },
           'list/:cardId': function(cardId) {
             document.getElementById(cardId).classList.remove('hidden');
