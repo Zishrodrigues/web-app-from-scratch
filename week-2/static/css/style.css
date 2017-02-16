@@ -28,7 +28,11 @@ section {
 }
 
 .entry {
-	border: 0.1em red dashed;
+
+}
+
+.visible {
+	display: block;
 }
 
 .hidden {

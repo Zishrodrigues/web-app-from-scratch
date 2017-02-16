@@ -11,25 +11,20 @@
   };
 
   var routes = { // the route object is declared
-    init: function() { // the routes.init function is declared
+    init: function(data) { // the routes.init function is declared
       routie({
           'list': function() {
+            document.querySelectorAll('.home').forEach(function (homeClass) {
+              homeClass.classList.remove('hidden');
+            });
           },
           'list/:cardId': function(cardId) {
-            console.log(cardId);
-            // toggleSections.toggle();
-            if ('#list/' + cardId  === window.location.hash) {
-                document.getElementById(cardId).classList.remove('hidden');
-                console.log('if ' + cardId);
-            } else {
-                document.getElementById(cardId).classList.add('hidden');
-                console.log('else ' + cardId);
-            }
+            document.getElementById(cardId).classList.remove('hidden');
+            document.querySelectorAll('.home').forEach(function (homeClass) {
+              homeClass.classList.add('hidden');
+            });
           }
       });
-      // routie('renderData.render.item.cardId', function() {
-      //   console.log('zomg');
-      // });
     }
   };
 
@@ -42,22 +37,6 @@
     html: ''
   };
 
-  var toggleSections = {
-      // loop for each get element by id
-      toggle: function(data){
-          var route = window.location.hash;
-          data.forEach(function (cardId){
-            if ('#list/' + cardId  === window.location.hash) {
-                document.getElementById(cardId).classList.remove('hidden');
-                console.log('if ' + cardId);
-            } else {
-                document.getElementById(cardId).classList.add('hidden');
-                console.log('else ' + cardId);
-            }
-          });
-      }
-  };
-
   // store the data here
   var renderData = {
     render: function(data) {
@@ -65,6 +44,8 @@
         var compile = Handlebars.compile(library.source);
         library.html = compile(item);
         library.main.innerHTML += library.html;
+        var cardMatcher = item.cardId;
+        console.log(cardMatcher);
       });
     }
   };
