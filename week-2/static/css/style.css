@@ -14,21 +14,33 @@ body {
 a {
 	text-decoration: none;
 	color: #ffffff;
+	font-size: 2em;
+	font-weight: bold;
 }
 
 section {
-	height: 90vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 0.1em green dashed;
 }
+
 .home {
 	height: auto;
+	background-image: url('../images/wood-texture.jpg');
+	margin: 1em auto;
+	border-radius: 1em;
 }
 
-.entry {
+.home img {
 
+}
+
+.card-detail {
+	height: 90vh;
+	width: 100%;
+	background-image: url(../images/wood.jpg);
+	background-size: fit;
+	background-position: center;
 }
 
 .visible {
