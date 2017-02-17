@@ -43,6 +43,10 @@ section {
 	background-position: center;
 }
 
+.card-detail > div {
+	padding: 1em;
+}
+
 .visible {
 	display: block;
 }
