@@ -13,7 +13,7 @@
   var routes = { // the route object is declared
     init: function(data) { // the routes.init function is declared
       routie({
-          'list': function() {
+          'list': function() { 
             document.querySelectorAll('.home').forEach(function (homeClass) {
               homeClass.classList.remove('hidden');
             });
@@ -40,7 +40,7 @@
     html: ''
   };
 
-  // store the data here
+  // render the data to the html here
   var renderData = {
     render: function(data) {
       data.forEach(function(item, i) {
