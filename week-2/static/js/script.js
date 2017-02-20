@@ -1,7 +1,7 @@
 (function() { // here an iffe is initiated as to keep the global scope empty and run the code on read
   "use strict"; // the strict line is used to make sure the function only runs in strict mode
 
-  window.location.hash = '#home'; //go to #home as soon as the page loads
+  window.location.hash = '#list'; //go to #home as soon as the page loads
 
   var app = { // the app object is declared
     init: function() { // the init function is declared and run
@@ -11,58 +11,45 @@
   };
 
   var routes = { // the route object is declared
-    pages: [ //here an array is made with the page id's
-      'home',
-      'bestprac'
-    ],
-    init: function() { // the routes.init function is declared
-      window.addEventListener('hashchange', sections.toggle, false);
+    init: function(data) { // the routes.init function is declared
+      routie({
+          'list': function() {
+            document.querySelectorAll('.home').forEach(function (homeClass) {
+              homeClass.classList.remove('hidden');
+            });
+            document.querySelectorAll('.card-detail').forEach(function (cardDetail) {
+              cardDetail.classList.add('hidden');
+            });
+          },
+          'list/:cardId': function(cardId) {
+            document.getElementById(cardId).classList.remove('hidden');
+            document.querySelectorAll('.home').forEach(function (homeClass) {
+              homeClass.classList.add('hidden');
+            });
+          }
+      });
     }
-  };
-
-  var sections = {
-      // loop for each get element by id
-      toggle: function(){
-          var route = window.location.hash;
-          routes.pages.forEach(function (page){
-            if ('#' + page  === route ) {
-                document.getElementById(page).classList.remove('hidden');
-            } else {
-                document.getElementById(page).classList.add('hidden');
-            }
-          });
-      }
   };
 
   //set variables in library object
   var library = {
-    main: document.querySelector('main'),
-    template : Handlebars.compile(document.querySelector('#template').innerHTML),
-    urlHolidays: 'https://holidayapi.com/v1/holidays?key=e969cdc0-1552-4027-b885-41220d5b85f3&country=NL&year=2016',
+    main : document.querySelector('main'),
+    template : document.querySelector('#template'),
+    source : template.innerHTML,
+    urlPromoCards: 'https://omgvamp-hearthstone-v1.p.mashape.com/cards/sets/Promo',
     html: ''
   };
 
-  var dataContainer = {
-    valueA: '',
-    valueB: ''
-  };
-
-  // store the data here
-  var storeData = {
-    holidays: function(data) {
-      var holidaysArray = Object.keys(data.holidays).map(function (hMap) {
-        return data.holidays[hMap];
-      }).map(function (hMap) {
-        return hMap[0];
-      }).map(function (mapName) {
-        return mapName.name;
-    });
-        // .map(hMap => data.holidays[hMap]);
-        // .map(hMap => hMap[0])
-        // .map(mapName => mapName.name);
-      console.log(holidaysArray);
-      dataContainer.valueA = holidaysArray;
-      // dataContainer.valueB = data.holidays;
+  // render the data to the html here
+  var renderData = {
+    render: function(data) {
+      data.forEach(function(item, i) {
+        var compile = Handlebars.compile(library.source);
+        library.html = compile(item);
+        library.main.innerHTML += library.html;
+        var cardMatcher = item.cardId;
+        console.log(cardMatcher);
+      });
     }
   };
 
@@ -70,10 +57,12 @@
   var getData = {
     init: function() {
       aja()
-        .url(library.urlHolidays)
+        .url(library.urlPromoCards)
+        .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
         .on('200', function(data){
             //data is a javascript object
-            storeData.holidays(data);
+            renderData.render(data);
+            console.log(data);
           })
       .go();
     }
