@@ -26,9 +26,7 @@
         .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
         .on('200', function(data){
             //data is a javascript object
-            renderData.render(data);
-            console.log(data);
-          })
+            renderData.render(data);          })
       .go();
     }
   };
@@ -63,6 +61,6 @@
       });
     }
   };
-  
+
   app.init(); //the main app function is called
 })();
