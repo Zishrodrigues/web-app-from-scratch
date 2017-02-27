@@ -64,6 +64,7 @@
       });
     }
   };
-
   app.init(); //the main app function is called
 })();
+
+//adjustments made
