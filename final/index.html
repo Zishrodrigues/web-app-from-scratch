@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <title>Web app</title>
+
+</head>
+<body>
+
+  <main>
+    <h2>Amazing Hearthstone App</h2>
+
+    <!-- HTML will be injected here -->
+  </main>
+
+  <script id="template" type="text/x-handlebars-template">
+    <div class="entry">
+      <section id="list" class="home">
+        <a href="#list/{{cardId}}">
+          {{name}}
+        </a>
+        <img src="{{img}}" alt="{{name}}">
+      </section>
+      <section id="{{cardId}}" class="hidden card-detail">
+        <div>
+          <a href="#list">Back to overview</a>
+        </div>
+        <div>
+          {{type}}<br>
+          {{text}}<br>
+          {{health}}
+        </div>
+        <div>
+          <img src="{{img}}" alt="{{name}}">
+          <img src="{{imgGold}}" alt="{{name}}">
+        </div>
+      </section>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="static/js/routie.js"></script>
+  <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
+  <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="static/js/script.js"></script>
+</body>
+</html>
