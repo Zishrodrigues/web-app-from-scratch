@@ -37,6 +37,15 @@
         var compile = Handlebars.compile(config.source); //compile the data into #template
         config.html = compile(item); //compile an item into the html
         config.main.innerHTML += config.html; //add the HTML into the main element
+        if(item.hasOwnProperty('img')) {
+          console.log('img here');
+        } else {
+          console.log('no img');
+          document.querySelectorAll('#cardImage').forEach(function (cardImg) {
+            cardImg.src = '../final/static/images/placeholder.png';
+            console.log(cardImg);
+          });
+        }
       });
     }
   };
