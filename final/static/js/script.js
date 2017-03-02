@@ -40,7 +40,7 @@
         if(item.hasOwnProperty('img')) {
           console.log('img here');
         } else {
-          console.log('no img');
+          console.error('no img'); // << a nifty little trick if you're showing console.log as an error message
           document.querySelectorAll('#cardImage').forEach(function (cardImg) {
             cardImg.src = '../final/static/images/placeholder.png';
             console.log(cardImg);
@@ -63,7 +63,8 @@
           },
           'list/:cardId': function(cardId) { //Function that's activitated when url = #list/cardId
             document.getElementById(cardId).classList.remove('hidden');
-            document.querySelectorAll('.home').forEach(function (homeClass) {
+            document.querySelectorAll('.home').forEach(function (homeClass) { 
+              // you're using document.querySelectorAll for the same thing twice, put it in a variable! (var home = docu..)
               homeClass.classList.add('hidden');
             });
           }
