@@ -13,7 +13,6 @@
 
   <main>
     <h2>Amazing Hearthstone App</h2>
-
     <!-- HTML will be injected here -->
   </main>
 
@@ -24,21 +23,22 @@
           {{name}}
         </a>
         <img id="cardImage" src="{{img}}" alt="{{name}}">
-        <!-- <img src="static/images/placeholder.png" alt="Chicken"> -->
       </section>
       <section id="{{cardId}}" class="hidden card-detail">
         <div>
-          <a href="#list">Back to overview</a>
+          <ul>
+            <li>{{type}}</li>
+            <li>{{text}}</li>
+            <li>{{cardSet}}</li>
+            <li>{{race}}</li>
+            <li>{{faction}}</li>
+          </ul>
         </div>
         <div>
-          {{type}}<br>
-          {{text}}<br>
-          {{health}}
+          <img id="cardImage-detail" src="{{img}}" alt="{{name}}">
+          <img id="cardImage-detailGold" src="{{imgGold}}" alt="{{name}}">
         </div>
-        <div>
-          <img src="{{img}}" alt="{{name}}">
-          <img src="{{imgGold}}" alt="{{name}}">
-        </div>
+        <a href="#list">Back to overview</a>
       </section>
     </div>
   </script>

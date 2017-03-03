@@ -21,6 +21,7 @@ a {
 section {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -31,12 +32,8 @@ section {
 	border-radius: 1em;
 }
 
-.home img {
-
-}
-
 .card-detail {
-	height: 90vh;
+	height: 100vh;
 	width: 100%;
 	background-image: url(../images/wood.jpg);
 	background-size: fit;
@@ -45,6 +42,20 @@ section {
 
 .card-detail > div {
 	padding: 1em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	font-size: 2em;
+}
+
+@media only screen and (max-width: 780px) {
+	#cardImage-detailGold {
+		display: none;
+	}
 }
 
 .visible {

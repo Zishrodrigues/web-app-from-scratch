@@ -26,27 +26,38 @@
         .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
         .on('200', function(data){
             //data is a javascript object
-            renderData.render(data);          })
+            renderData.render(data);
+            renderData.filter(data);
+          })
       .go();
     }
   };
 
   var renderData = { // render the data to the html here
     render: function(data) { // use the api data for this function
-      data.forEach(function(item) { //Loop through each data object and put it in item
+        data.map(function(item) { //Loop through each data object and put it in item
         var compile = Handlebars.compile(config.source); //compile the data into #template
         config.html = compile(item); //compile an item into the html
         config.main.innerHTML += config.html; //add the HTML into the main element
         if(item.hasOwnProperty('img')) {
-          console.log('img here');
+          // console.log('img here');
         } else {
-          console.log('no img');
-          document.querySelectorAll('#cardImage').forEach(function (cardImg) {
+          document.querySelectorAll('#cardImage , #cardImage-detail, #cardImage-detailGold').forEach(function (cardImg) {
             cardImg.src = '../final/static/images/placeholder.png';
-            console.log(cardImg);
           });
+
         }
       });
+    },
+    filter: function(filterData) {
+      var cardCost = [];
+      filterData.forEach(function getCost(item) {
+          cardCost.push(item.cost);
+      });
+      var filtered = cardCost.filter(function (value) {
+        return value >= 4;
+      });
+      console.log(filtered);
     }
   };
 
