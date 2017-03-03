@@ -49,12 +49,12 @@
         }
       });
     },
-    filter: function(filterData) {
+    filter: function(filterData) { // function that filters data
       var cardCost = [];
-      filterData.forEach(function getCost(item) {
+      filterData.forEach(function getCost(item) { //get the cost of each card
           cardCost.push(item.cost);
       });
-      var filtered = cardCost.filter(function (value) {
+      var filtered = cardCost.filter(function (value) { //filter all cards and only return those that have a value of 4 or higher
         return value >= 4;
       });
       console.log(filtered);
