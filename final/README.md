@@ -2,6 +2,9 @@
 #Web app link:#
 https://oege.ie.hva.nl/~khushiz001/webapp
 
-#Features#
+##Features##
 * See Hearthstone promo cards
 * Get information regarding sets, stats en flavor text
+
+##Sources##
+Unnofficial Hearthstone API: https://market.mashape.com/omgvamp/hearthstone
