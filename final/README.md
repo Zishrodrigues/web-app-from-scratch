@@ -6,5 +6,8 @@ https://oege.ie.hva.nl/~khushiz001/webapp
 * See Hearthstone promo cards
 * Get information regarding sets, stats en flavor text
 
+##Flow##
+![alt tag](http://flow.jpg)
+
 ##Sources##
 Unnofficial Hearthstone API: https://market.mashape.com/omgvamp/hearthstone
