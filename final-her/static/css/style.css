@@ -1,0 +1,67 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+	background-color: #111111;
+	color: #ffffff;
+	padding: 2em;
+}
+
+a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.home {
+	height: auto;
+	background-image: url('../images/wood-texture.jpg');
+	margin: 1em auto;
+	border-radius: 1em;
+}
+
+.card-detail {
+	height: 100vh;
+	width: 100%;
+	background-image: url(../images/wood.jpg);
+	background-size: fit;
+	background-position: center;
+}
+
+.card-detail > div {
+	padding: 1em;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	font-size: 2em;
+}
+
+@media only screen and (max-width: 780px) {
+	#cardImage-detailGold {
+		display: none;
+	}
+}
+
+.visible {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}

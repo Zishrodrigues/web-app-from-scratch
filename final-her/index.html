@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <title>Web app</title>
+
+</head>
+<body>
+
+  <main>
+    <h2>Amazing Hearthstone App</h2>
+    <label>
+      filter
+      <input id="filter" type="checkbox">
+    </label>
+    <!-- HTML will be injected here -->
+  </main>
+
+  <script id="template" type="text/x-handlebars-template">
+    <div class="entry">
+      <section id="list" class="home">
+        <a href="#list/{{cardId}}">
+          {{name}}
+        </a>
+        <img id="cardImage" src="{{img}}" alt="{{name}}">
+      </section>
+      <section id="{{cardId}}" class="hidden card-detail">
+        <div>
+          <ul>
+            <li>{{type}}</li>
+            <li>{{text}}</li>
+            <li>{{cardSet}}</li>
+            <li>{{race}}</li>
+            <li>{{faction}}</li>
+          </ul>
+        </div>
+        <div>
+          <img id="cardImage-detail" src="{{img}}" alt="{{name}}">
+          <img id="cardImage-detailGold" src="{{imgGold}}" alt="{{name}}">
+        </div>
+        <a href="#list">Back to overview</a>
+      </section>
+    </div>
+  </script>
+
+  <script type="text/javascript" src="static/js/routie.js"></script>
+  <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
+  <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="static/js/script.js"></script>
+</body>
+</html>
