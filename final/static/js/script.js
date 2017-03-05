@@ -35,7 +35,7 @@
 
   var renderData = { // render the data to the html here
     render: function(data) { // use the api data for this function
-        data.map(function(item) { //Loop through each data object and put it in item
+        data.forEach(function(item) { //Loop through each data object and put it in item
         var compile = Handlebars.compile(config.source); //compile the data into #template
         config.html = compile(item); //compile an item into the html
         config.main.innerHTML += config.html; //add the HTML into the main element
@@ -45,7 +45,6 @@
           document.querySelectorAll('#cardImage , #cardImage-detail, #cardImage-detailGold').forEach(function (cardImg) {
             cardImg.src = '../final/static/images/placeholder.png';
           });
-
         }
       });
     },
@@ -64,7 +63,8 @@
   var routes = { // the route object is declared
     init: function(data) { // the routes.init function is declared
       routie({
-          'list': function() { //function that's activitated when url = #list
+          ':name': function(name) { //function that's activitated when url = #
+          console.log(name);
             document.querySelectorAll('.home').forEach(function (homeClass) { // Loop through all elements with class .home
               homeClass.classList.remove('hidden'); // Go through the classes with .hidden and remove the class from element
             });
