@@ -6,31 +6,194 @@
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" type="text/css" href="static/css/style.css">
 
-    <title>Web app</title>
+    <title>Funda</title>
 
 </head>
 <body>
 
-    <section id="list">
-        <h1>
-            Set list
-        </h1>
-        <a href="#{{sets}}">{{sets}}</a>
+    <header>
+
+    </header>
+
+    <section class="intro hide">
+        <h1>Welkom bij het Funda Moodboard</h1>
+        <p>Op het Funda moodboard app krijg je steeds een selectie foto's te zien. Kies de foto die het beste bij jou pas en klik op volgende.</p>
+        <p>Aan het einde krijg je een selectie van huizen die past bij jou smaak.</p>
+        <a href="#placeForm">Begin</a>
     </section>
 
+    <form action="#roomForm" method="post" class="filterForm hide" id="placeForm">
+        <input type="radio" name="place" value="amsterdam" id="amsterdam" checked/>
+        <label for="amsterdam"></label>
+
+        <input type="radio" name="place" value="haarlem" id="haarlem"/>
+        <label for="haarlem"></label>
+
+        <input type="radio" name="place" value="utrecht" id="utrecht"/>
+        <label for="utrecht"></label>
+
+        <input type="radio" name="place" value="amersfoort" id="amersfoort"/>
+        <label for="amersfoort"></label>
+
+        <input type="radio" name="place" value="soest" id="soest"/>
+        <label for="soest"></label>
+
+        <input type="radio" name="place" value="Oosthuizen" id="oosthuizen"/>
+        <label for="oosthuizen"></label>
+
+        <input type="radio" name="place" value="nieuw-vennep" id="nieuw-vennep"/>
+        <label for="nieuw-vennep"></label>
+
+        <input type="radio" name="place" value="Denhelder" id="denhelder"/>
+        <label for="denhelder"></label>
+
+        <input type="radio" name="place" value="Baarn" id="baarn"/>
+        <label for="baarn"></label>
+
+        <input type="radio" name="place" value="Beverwijk" id="beverwijk"/>
+        <label for="beverwijk"></label>
+
+        <input type="radio" name="place" value="leeuwarden" id="leeuwarden"/>
+        <label for="leeuwarden"></label>
+
+        <button type="submit" name="getVal">volgende</button>
+    </form>
+
+    <form action="#spaceForm" method="post" class="filterForm hide" id="roomForm">
+
+        <input type="radio" name="rooms" value="2+kamers" id="oneRoom" checked/>
+        <label for="oneRoom"></label>
+
+        <input type="radio" name="rooms" value="1+kamers" id="twoRoom"/>
+        <label for="twoRoom"></label>
+
+        <input type="radio" name="rooms" value="4+kamers" id="threeRoom"/>
+        <label for="threeRoom"></label>
+
+        <input type="radio" name="rooms" value="3+kamers" id="fourRoom"/>
+        <label for="fourRoom"></label>
+
+        <input type="radio" name="rooms" value="3+kamers" id="fiveRoom"/>
+        <label for="fiveRoom"></label>
+
+        <input type="radio" name="rooms" value="3+kamers" id="sixRoom"/>
+        <label for="sixRoom"></label>
+
+        <input type="radio" name="rooms" value="2+kamers" id="sevenRoom"/>
+        <label for="sevenRoom"></label>
+
+        <input type="radio" name="rooms" value="2+kamers" id="eightRoom"/>
+        <label for="eightRoom"></label>
+
+        <input type="radio" name="rooms" value="1+kamers" id="nineRoom"/>
+        <label for="nineRoom"></label>
+
+        <input type="radio" name="rooms" value="4+kamers" id="tenRoom"/>
+        <label for="tenRoom"></label>
+
+        <input type="radio" name="rooms" value="2+kamers" id="elevenRoom"/>
+        <label for="elevenRoom"></label>
+
+        <input type="radio" name="rooms" value="2+kamers" id="twelveRoom"/>
+        <label for="twelveRoom"></label>
+
+        <button type="submit" name="getVal">volgende</button>
+    </form>
+
+    <form action="#result" method="post" class="filterForm hide" id="spaceForm">
+
+        <input type="radio" name="space" value="tuin" id="250" checked/>
+        <label for="250"></label>
+
+        <input type="radio" name="space" value="tuin" id="500"/>
+        <label for="500"></label>
+
+        <input type="radio" name="space" value="balkon" id="1000"/>
+        <label for="1000"></label>
+
+        <input type="radio" name="space" value="dakterras" id="5000"/>
+        <label for="5000"></label>
+
+        <input type="radio" name="space" value="balkon" id="5500"/>
+        <label for="5500"></label>
+
+        <input type="radio" name="space" value="balkon" id="6000"/>
+        <label for="6000"></label>
+
+        <input type="radio" name="space" value="tuin" id="7000"/>
+        <label for="7000"></label>
+
+        <input type="radio" name="space" value="dakterras" id="8000"/>
+        <label for="8000"></label>
+
+        <input type="radio" name="space" value="tuin" id="9000"/>
+        <label for="9000"></label>
+
+        <input type="radio" name="space" value="dakterras" id="10000"/>
+        <label for="10000"></label>
+
+        <button type="submit" name="getVal">volgende</button>
+    </form>
+
+
+
     <main>
-    <h2>Hearthstone App</h2>
+    <!-- HTML will be injected here -->
     </main>
 
-    <script id="list-template" type="text/x-handlebars-template">
-    </script>
+    <a href="#reset" id="result" >reset</a>
 
     <script id="template" type="text/x-handlebars-template">
+        <section class="overview">
+            <h1>
+                <a href="#result/{{Id}}">{{Adres}}</a>
+            </h1>
+            <div class="overviewImage">
+                <img src="{{FotoLarge}}" alt="{{Adres}}">
+            </div>
+            <h2>
+                &euro;{{Koopprijs}}
+            </h2>
+            <h3>
+                {{Woonplaats}}
+            </h3>
+        </section>
+
+        <div id="{{Id}}" class="detail hide">
+            <h1>
+                {{Adres}}
+            </h1>
+            <div>
+                <section>
+                    <img src="{{FotoLarge}}" alt="{{Adres}}">
+                </section>
+                <section>
+                    <ul>
+                        <li>
+                            {{Postcode}} {{Woonplaats}}
+                        </li>
+                        <li>
+                            {{AantalKamers}} kamers
+                        </li>
+                        <li>
+                            Type: {{Soort-aanbod}}
+                        </li>
+                        <li>
+                            &euro;{{Koopprijs}}
+                        </li>
+                    </ul>
+                    <a href="{{URL}}" target="_blank">Meer informatie</a>
+                    <a class="back" href="#result">Terug naar overzicht</a>
+
+                </section>
+            </div>
+        </div>
     </script>
 
-    <script type="text/javascript" src="static/js/routie.js"></script>
-    <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
-    <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
-    <script type="text/javascript" src="static/js/script.js"></script>
+  <script type="text/javascript" src="static/js/routie.js"></script>
+  <script type="text/javascript" src="static/js/aja/src/aja.min.js"></script>
+  <script type="text/javascript" src="static/js/handlebars/handlebars-v4.0.5.js"></script>
+  <script type="text/javascript" src="static/js/privateScript.js"></script>
+  <script type="text/javascript" src="static/js/script.js"></script>
 </body>
 </html>

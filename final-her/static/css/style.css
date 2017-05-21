@@ -1,67 +1,471 @@
 * {
-	margin:0;
-	padding:0;
-	box-sizing: border-box;
+    margin:0;
+    padding: 0;
 }
 
-body {
-	font-family: sans-serif;
-	background-color: #111111;
-	color: #ffffff;
-	padding: 2em;
+html, body {
+    height: 100%;
+    font-family: sans-serif;
 }
 
-a {
-	text-decoration: none;
-	color: #ffffff;
-	font-size: 2em;
-	font-weight: bold;
+/*body {
+    padding:0.5em;
 }
 
-section {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	align-items: center;
+@media screen and (min-width: 40em) {
+    body {
+        padding: 5em;
+    }
+}*/
+
+header {
+    width:100%;
+    height: 3em;
+    background-color: #F7A100;
 }
 
-.home {
-	height: auto;
-	background-image: url('../images/wood-texture.jpg');
-	margin: 1em auto;
-	border-radius: 1em;
+.hide {
+    display: none;
 }
 
-.card-detail {
-	height: 100vh;
-	width: 100%;
-	background-image: url(../images/wood.jpg);
-	background-size: fit;
-	background-position: center;
+/* INTRO */
+.intro {
+    /*border:0.3em #F7A100 solid;*/
+    margin:1em;
+    text-align: center;
+    width: auto;
+    color: #F7A100;
 }
 
-.card-detail > div {
-	padding: 1em;
+@media screen and (min-width: 40em) {
+    .intro {
+        width: 30em;
+        margin: 1em auto;
+    }
 }
 
-ul {
-	list-style-type: none;
+.intro p {
+    margin: 1em;
+    font-size: 1.5em;
 }
 
-ul li {
-	font-size: 2em;
+.intro a {
+    text-decoration: none;
+    color: #ffffff;
+    padding:1em;
+    background-color: #F7A100;
+    display: inline-block;
+    margin:1em;
 }
 
-@media only screen and (max-width: 780px) {
-	#cardImage-detailGold {
-		display: none;
-	}
+.intro a:hover,
+.intro a:focus {
+    background-color: #ffffff;
+    border: 0.1em #F7A100 solid;
+    color: #F7A100;
 }
 
-.visible {
-	display: block;
+/* FORM */
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transition: 1s;
+    margin: 0.5em;
+    animation: fade 1s;
 }
 
-.hidden {
-	display: none;
+@media screen and (min-width: 40em) {
+    form {
+        margin: 5em;
+    }
+}
+
+form label {
+    border: 0.4em #ffffff solid;
+    flex: 1;
+    height: 20em;
+    cursor: pointer;
+    margin: 0.5em;
+    min-width: 40%;
+    max-height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: url('http://www.wiceklistwan.nl/wp-content/uploads/galleries/post-1216/full/Amsterdam-012.jpg');
+    transition: 0.3s;
+}
+
+form label:nth-of-type(2) {
+    background-image: url('https://www.puurmakelaars.nl/wp-content/uploads/2014/09/grote-markt-haarlem-buurt-centrum.jpg');
+}
+
+form label:nth-of-type(3) {
+    background-image: url('http://www.iamexpat.nl/app/webroot/upload/files/cities/utrecht%20dutch%20city.jpg');
+}
+
+form label:nth-of-type(4) {
+    background-image: url('http://www.locatieamersfoort.com/media/14334/Amersfoort-Events-Foto-factsheet_699x449.jpg');
+}
+
+form label:nth-of-type(5) {
+    background-image: url('https://www.nederlandschoon.nl/sites/default/files/media/Images/blikjes%20en%20flesjes/soest-zomer.png');
+}
+
+form label:nth-of-type(6) {
+    background-image: url('http://www.stedengids.info/loc/t/1859/4.jpg');
+}
+
+form label:nth-of-type(7) {
+    background-image: url('http://kasteel-getsewoud.nl/wp-content/uploads/2013/09/Habanera-5-tm-107-Nieuw-Vennep-DRONE-12-1600x1068.jpg');
+}
+
+form label:nth-of-type(8) {
+    background-image: url('http://www.tapaseten.nl/wp-content/uploads/Tapas-Eten-Den-Helder.jpg');
+}
+
+form label:nth-of-type(9) {
+    background-image: url('http://cloud.pubble.nl/76dcf4b5/content/2016/8/c0ad7c1c-4c82-4231-ada9-2f425068b19e.jpg');
+}
+
+form label:nth-of-type(10) {
+    background-image: url('https://www.beverwijkstartup.nl/Pictures//object/object-28429630/standaard/Breestraat-8-Beverwijk-552409.jpg');
+}
+
+form label:nth-of-type(11) {
+    background-image: url('https://openbaarladen.nl/media/39479/leeuwarden.jpg');
+}
+
+#roomForm label:nth-of-type(1) {
+    background-image: url('http://www.empressangkor.com/uploads/images/Gallery/Gallery-in-Studio-Rooms/Guest-Room-2-.jpg');
+}
+
+#roomForm label:nth-of-type(2) {
+    background-image: url('http://www.paradiseapartments-budapest.com/site/_public/images/web_site/2_room_apartment/2-bedroom-apartment-002.jpg');
+}
+
+#roomForm label:nth-of-type(3) {
+    background-image: url('http://www.pragueapartment.cz/data/USR_044_DEFAULT/1_801_living_room.jpg');
+}
+
+#roomForm label:nth-of-type(4) {
+    background-image: url('https://www.detelefoongids.nl/content/image-gallery/12032531/AN1MYv0BDFh_4YKXhmorvgJONg/kooten-woninginrichting-r-van.jpg');
+}
+
+#roomForm label:nth-of-type(5) {
+    background-image: url('http://domahu.com/wp-content/uploads/2017/02/apartment-apartment-interior-homemodelco.jpg');
+}
+
+#roomForm label:nth-of-type(6) {
+    background-image: url('http://www.stylemotivation.com/wp-content/uploads/2013/09/30-Amazing-Apartment-Interior-Design-Ideas-7.jpg');
+}
+
+#roomForm label:nth-of-type(7) {
+    background-image: url('http://www.idesignarch.com/wp-content/uploads/Alvhem-Apartment-Interior-Design_3.jpg');
+}
+
+#roomForm label:nth-of-type(8) {
+    background-image: url('http://www.impressiveinteriordesign.com/wp-content/uploads/2014/11/White-Apartment-Interior-Design-Showcase-1.jpg');
+}
+
+#roomForm label:nth-of-type(9) {
+    background-image: url('http://cdn.home-designing.com/wp-content/uploads/2010/12/small-kids-room-design.jpg');
+}
+
+#roomForm label:nth-of-type(10) {
+    background-image: url('http://iyeeh.com/wp-content/uploads/2017/01/interior-house-interior-house-58908f190aa0d.jpg');
+}
+
+#roomForm label:nth-of-type(11) {
+    background-image: url('http://iyeeh.com/wp-content/uploads/2017/01/interior-house-interior-ideas-about-house-design-pinterest-flat-design.jpg');
+}
+
+#roomForm label:nth-of-type(12) {
+    background-image: url('http://www.huisenverkoop.nl/wp-content/uploads/2012/10/ruimehal.png');
+}
+
+#spaceForm label:nth-of-type(1) {
+    background-image: url('http://www.buitenhuys.be/img/content/buitenhuys.jpg');
+}
+
+#spaceForm label:nth-of-type(2) {
+    background-image: url('http://rtl.lwcdn.nl/imageScaled/?site=eigenhuisentuin&file=1441094168_21-vuur-2.png&w=1000&h=2000&cropped=0');
+}
+
+#spaceForm label:nth-of-type(3) {
+    background-image: url('http://www.anchoriron.com/img/galleries/RAIL_balcony_01_big.jpg');
+}
+
+#spaceForm label:nth-of-type(4) {
+    background-image: url('http://bashkim.nl/wp-content/uploads/2015/11/Tuinieren-zonder-tuin-dakterras-wvm_0.jpg?gid=2');
+}
+
+#spaceForm label:nth-of-type(5) {
+    background-image: url('http://roomed.nl/wp-content/uploads/2016/04/C-000213-02-006_Emily_IG_Outside_Full_095.jpg');
+}
+
+#spaceForm label:nth-of-type(6) {
+    background-image: url('https://s-media-cache-ak0.pinimg.com/736x/7a/cf/5d/7acf5ddcd8c10a928da8b8fa8bbb7bb9.jpg');
+}
+
+#spaceForm label:nth-of-type(7) {
+    background-image: url('http://www.versteegh-tuinaanleg.nl/images/tuinaanleg/Tuin%20foto%20024.JPG');
+}
+
+#spaceForm label:nth-of-type(8) {
+    background-image: url('http://www.finegardening.com/sites/finegardening.com/files/images/article/5267/5-9-2014-Mandelartz-1.jpg');
+}
+
+#spaceForm label:nth-of-type(9) {
+    background-image: url('https://www.hovenier-weetjes.nl/wp-content/uploads/sites/17/2015/10/Engelse-Cottage.jpg');
+}
+
+#spaceForm label:nth-of-type(10) {
+    background-image: url('http://antwantuintotaal.nl/wp-content/uploads/2016/08/moderne-tuin.jpg');
+}
+
+
+form label:hover,
+form label:focus {
+    border: 0.4em #F7A100 solid;
+    transform: scale(1.1);
+}
+
+@media screen and (min-width: 40em) {
+    form label {
+        min-width: 20em;
+        max-height: none;
+    }
+}
+
+@media screen and (min-width: 40em) {
+    form label:nth-of-type(3),
+    form label:nth-of-type(6),
+    form label:nth-of-type(9) {
+        min-width: 35%;
+    }
+}
+
+form input[type="radio"] {
+    opacity: 0;
+    /*position: absolute;*/
+    left: -100vw;
+}
+
+form input[type="radio"]:checked + label {
+  border: 0.4em #F7A100 solid;
+  transform: scale(1);
+}
+
+form input[type="radio"]:focus + label {
+  border: 0.4em #F7A100 solid;
+  transform: scale(1.1);
+}
+
+form button {
+    position: fixed;
+    padding:1em;
+    bottom:1em;
+    right:1em;
+    background-color: #F7A100;
+    border: 0.2em #F7A100 solid;
+    color: #ffffff;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+form button:focus,
+form button:hover {
+    background-color: #60c5f8;
+    border: 0.2em #60c5f8 solid;
+}
+
+,
+form button:focus {
+    transform: scale(1.2);
+}
+
+/* OVERVIEW */
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main section {
+    flex: 1;
+    height: 20em;
+    min-width: 60%;
+    margin: 0.5em;
+    overflow: hidden;
+    position: relative;
+}
+
+@media screen and (min-width: 40em) {
+    main section {
+        min-width: 20em;
+        max-width: 25em;
+        /*min-height: 20em;
+        max-height: none;*/
+    }
+}
+
+main section h2 {
+    position: absolute;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: #F7A100;
+    color: #ffffff;
+    padding:0.5em;
+    font-size: 1.2em;
+}
+
+main section h3 {
+    position: absolute;
+    right: 0.3em;
+    bottom: 0.3em;
+    background-color: #F7A100;
+    color: #ffffff;
+    padding:0.5em;
+    font-size: 1em;
+}
+
+main section .overviewImage {
+    overflow: hidden;
+}
+
+main section .overviewImage img {
+    height: 100%;
+}
+
+main section h1 a {
+    display: block;
+    background-color: #F7A100;
+    text-align: center;
+    padding: 0.7em;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+main section h1 a:hover,
+main section h1 a:focus {
+    background-color: #60c5f8;
+}
+
+main section h1 a::after {
+    position: absolute;
+  	left: 0;
+  	right: 0;
+  	top: 0;
+  	bottom: 0;
+  	content: '';
+    border: 0.3em #F7A100 solid;
+}
+
+main section h1 a:hover:after,
+main section h1 a:focus:after {
+    border: 0.3em #60c5f8 solid;
+}
+
+/* DETAIL */
+.detail {
+    border:0.3em #F7A100 solid;
+    width:100%;
+    margin:0.5em;
+}
+
+.detail a {
+    padding: 1em;
+    background-color: #F7A100;
+    margin:1em;
+}
+
+.detail .back {
+    background-color: #F7A100;
+}
+
+.detail h1 {
+    background-color: #F7A100;
+    padding: 0.5em;
+    font-size: 1.5em;
+    color: #ffffff;
+}
+
+.detail div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:0;
+    padding:0;
+}
+
+@media screen and (min-width: 40em) {
+    .detail div {
+        flex-direction: row;
+    }
+}
+
+.detail div section {
+    margin:0;
+    padding:0;
+    overflow: hidden;
+    height: auto;
+    flex:1;
+    min-width: none;
+    max-width: none;
+}
+
+.detail div section img {
+    height: auto;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+    .detail div section img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+.detail div section ul {
+    list-style-type: circle;;
+    padding:1em;
+}
+
+.detail div section ul li {
+    color: #F7A100;
+    font-size: 1.5em;
+    margin-top:0.5em;
+    margin-left: 1em;
+}
+
+.detail div section a {
+    margin:1em;
+    display: inline-block;
+    background-color: #60c5f8;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1em;
+}
+
+/* HELPERS */
+@-webkit-keyframes fade {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#result {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 1em;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #60c5f8;
+}
+
+#result:hover,
+#result:focus {
+    text-decoration: underline;
 }
