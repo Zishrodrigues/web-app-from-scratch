@@ -111,6 +111,8 @@
                     console.log(dataWorker.dataHolder);
                 })
                 .on('40x', function(response){
+                    document.getElementById('error').classList.remove('hide');
+                    document.getElementById('loader').classList.add('hide');
                     console.log('Error :-()');
                 })
             .go();

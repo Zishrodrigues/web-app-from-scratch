@@ -475,4 +475,6 @@ main section h1 a:focus:after {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    color: #F7A100;
+    font-size: 2em;
 }
