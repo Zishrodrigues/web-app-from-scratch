@@ -13,3 +13,10 @@ The app gives you what I call a 'filter moodboard'. This is a set of images rela
 From the overview users can see detailed information on the specific houses as well as go on to the actual Funda page.
 
 ## Features
+
+* Choose images that speak to your imagination/taste when filtering
+* Get an overview of houses that match your choice
+* See detailed information on house and/or go to the main Funda page
+* Loading feedback when slow API response
+* Error message on failed API request
+* Reset button
