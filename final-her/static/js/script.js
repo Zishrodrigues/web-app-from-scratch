@@ -37,6 +37,7 @@
                     filters.formSubmit('spaceForm', 'space', 'result');
                 },
                 'result':function() {
+                    document.getElementById('loader').classList.remove('hide');
                     dataWorker.getData(config.url);
                     // document.getElementById('placeForm').classList.add('hide');
                     document.querySelectorAll('.overview').forEach(function (overview) { // Loop through all elements with class .home
@@ -99,6 +100,7 @@
                 .url(url + filters.parameters.join(''))
                 .on('200', function(data){
                 //data is a javascript object
+                    document.getElementById('loader').classList.add('hide');
                     dataWorker.render(data.Objects);
                     dataWorker.filterBrochure(data.Objects);
                     dataWorker.sortRooms(data.Objects);
