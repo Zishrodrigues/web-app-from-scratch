@@ -108,6 +108,9 @@
                     // localStorage.setItem("dataHolder", JSON.stringify(dataWorker.dataHolder));
                     console.log(dataWorker.dataHolder);
                 })
+                .on('40x', function(response){
+                    console.log('Error :-()');
+                })
             .go();
         },
         render: function(data) {
@@ -133,7 +136,14 @@
             var sorted = dataWorker.roomArray.sort(function(a, b) {
                 return a - b;
             });
+            dataWorker.countRooms(data);
             console.log('Sorted(rooms): ' + sorted);
+        },
+        countRooms: function(data) {
+            var reduced = dataWorker.roomArray.reduce(function(total, sum) {
+                return total + sum;
+            });
+            console.log('Reduced(total rooms): ' + reduced);
         }
     };
 
