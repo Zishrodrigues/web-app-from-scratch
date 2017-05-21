@@ -101,10 +101,11 @@
                 //data is a javascript object
                     dataWorker.render(data.Objects);
                     dataWorker.filterBrochure(data.Objects);
+                    dataWorker.sortRooms(data.Objects);
                     data.Objects.map(function(item) {
                         dataWorker.dataHolder.push(item);
                     });
-                    localStorage.setItem("dataHolder", JSON.stringify(dataWorker.dataHolder));
+                    // localStorage.setItem("dataHolder", JSON.stringify(dataWorker.dataHolder));
                     console.log(dataWorker.dataHolder);
                 })
             .go();
@@ -116,13 +117,23 @@
                 config.html = compile(item);
                 config.main.innerHTML += config.html;
             });
-            console.log(JSON.parse(localStorage.getItem("dataHolder")));
+            // console.log(JSON.parse(localStorage.getItem("dataHolder")));
         },
         filterBrochure: function(data) {
             var filtered = data.filter(function(val) {
                 return val.HeeftBrochure === false;
             });
-            // dataWorker.render(filtered);
+            console.log('Filtered(brochure): ' + filtered);
+        },
+        roomArray: [],
+        sortRooms: function(data) {
+            data.forEach(function(item) {
+                dataWorker.roomArray.push(item.AantalKamers);
+            });
+            var sorted = dataWorker.roomArray.sort(function(a, b) {
+                return a - b;
+            });
+            console.log('Sorted(rooms): ' + sorted);
         }
     };
 
