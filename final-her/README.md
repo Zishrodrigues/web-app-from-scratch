@@ -20,3 +20,9 @@ From the overview users can see detailed information on the specific houses as w
 * Loading feedback when slow API response
 * Error message on failed API request
 * Reset button
+
+## Object model diagram
+![diagram](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/wafs-diagram.jpg)
+
+## Interaction flow
+![flow](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/wafs-flow.jpg)
