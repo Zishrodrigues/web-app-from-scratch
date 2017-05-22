@@ -9,9 +9,15 @@ The goal for the course 'Web app from scratch' was to learn and create a Single 
 
 When conceptualizing my web app for Funda I wanted to create a filtering/search experience that spoke to people who didn't have a clear goal in mind yet. These are people who are still very much in the beginning stages of orientating.
 
+![screen1](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/screen1.jpg)
+
 The app gives you what I call a 'filter moodboard'. This is a set of images related to a specific subject. It could be neighborhoods, streets, cities, gardens or house interiors. For every selection users get to choose an image that speaks to their imagination. At the end of choosing users get a selection of houses based on what they liked. For example; Someone who picked images of a quiet tranquil neighborhood and vast living spaces would get a selection of houses that fit that criteria.
 
+![screen2](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/screen2.jpg)
+
 From the overview users can see detailed information on the specific houses as well as go on to the actual Funda page.
+
+![screen3](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/screen3.jpg)
 
 ## Features
 
