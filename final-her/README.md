@@ -26,3 +26,18 @@ From the overview users can see detailed information on the specific houses as w
 
 ## Interaction flow
 ![flow](https://raw.githubusercontent.com/zishrodrigues/web-app-from-scratch/master/wafs-flow.jpg)
+
+## Wishlist
+
+- [x] Filter moodboard
+- [x] Overview
+- [x] Detail
+- [x] load/error message
+- [ ] Dynamic images
+
+## Sources
+
+* Funda
+* Aja.js
+* Routie.js
+* Images(see css)
