@@ -14,32 +14,35 @@
   var app = { // the app object is declared
     init: function() { // the init function is declared and run
         routes.init(); //the routes function is called
-        getData.init(); //the getData function is called
+        DataContainer.getData.init(); //the getData function is called
     }
   };
-
-  // object that calls the data
-  var getData = {
-    init: function() {
-      aja()
-        .url(config.urlPromoCards)
-        .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
-        .on('200', function(data){
-            //data is a javascript object
-            renderData.render(data);          })
-      .go();
+  // Made a dataContainer object, inside we have the getData method and renderData method.
+  // Instead of two seperated objects, we now have one dataContainer object.
+  var dataContainer = {
+    getData: {
+      init: function() {
+        aja()
+          .url(config.urlPromoCards)
+          .header('X-Mashape-Key', '2sTOhVU46SmshEg17iL8fyLAEp9Hp1B5PGBjsnsJ2tUf1zkppp')
+          .on('200', function(data){
+              //data is a javascript object
+              renderData.render(data);          })
+        .go();
+      }
     }
-  };
-
-  var renderData = { // render the data to the html here
-    render: function(data) { // use the api data for this function
-      data.forEach(function(item) { //Loop through each data object and put it in item
-        var compile = Handlebars.compile(config.source); //compile the data into #template
-        config.html = compile(item); //compile an item into the html
-        config.main.innerHTML += config.html; //add the HTML into the main element
-      });
+    renderData: {
+      var renderData = { // render the data to the html here
+        render: function(data) { // use the api data for this function
+          data.forEach(function(item) { //Loop through each data object and put it in item
+            var compile = Handlebars.compile(config.source); //compile the data into #template
+            config.html = compile(item); //compile an item into the html
+            config.main.innerHTML += config.html; //add the HTML into the main element
+          });
+        }
+      };
     }
-  };
+  }
 
   var routes = { // the route object is declared
     init: function(data) { // the routes.init function is declared
@@ -61,6 +64,7 @@
       });
     }
   };
-
   app.init(); //the main app function is called
 })();
+
+//adjustments made
